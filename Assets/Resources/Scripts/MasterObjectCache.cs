@@ -1,15 +1,15 @@
 using UnityEngine;
-using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 public class MasterObjectCache : MonoBehaviour
 {
-	public static _Instance {get; private set;}
+	public static MasterObjectCache _Instance {get; private set;}
 	
 	public Aimer gameAimer {get; private set;}
 	private List<Player> _Players;
-	public ReadOnlyCollection<Player> players {get { return _Players.AsReadOnly(); } private set;}
+	public ReadOnlyCollection<Player> players {get { return _Players.AsReadOnly(); }}
 	
 	public void checkIfInstanceExists()
 	{
@@ -29,21 +29,26 @@ public class MasterObjectCache : MonoBehaviour
 	{
 		if(_Players == null)
 		{
-			Console.LogError("MasterObjectCache: Players is null");
+			Debug.LogError("MasterObjectCache: Players is null");
 			Debug.Break();
+			return false;
 		}
 			
-		if(_Players.count == 0)
+		if(_Players.Count == 0)
 		{
-			Console.LogError("MasterObjectCache: Players is empty");
+			Debug.LogError("MasterObjectCache: Players is empty");
 			Debug.Break();
+			return false;
 		}
 		
 		if(gameAimer == null)
 		{
-			Console.LogError("MasterObjectCache: Game Aimer is null");
+			Debug.LogError("MasterObjectCache: Game Aimer is null");
 			Debug.Break();
+			return false;
 		}
+
+		return true;
 	}
 	
 	public void Awake()

@@ -40,6 +40,7 @@ Advanced Foliage Shader v4.meta
 MeshBrush.meta
 Assets/MeshBrush
 Assets/Editor.meta
+PreAssets/
 
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
@@ -55,6 +56,7 @@ ExportedObj/
 *.unityproj
 *.booproj
 *.cd
+*.tss
 
 # =========================
 # Operating System Files

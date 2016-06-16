@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GameController : MonoBehaviour
 {
-	public static _Instance {get; private set;}
+	public static GameController _Instance {get; private set;}
 	
 	public void checkIfInstanceExists()
 	{
