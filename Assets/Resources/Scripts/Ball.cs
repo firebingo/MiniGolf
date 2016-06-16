@@ -32,7 +32,7 @@ public class Ball : MonoBehaviour
         {
             if (physicsBody.velocity.magnitude < 0.1f)
             {
-                if (velCount > 3.0f)
+                if (velCount > 5.0f)
                 {
                     sleepRigidbody();
                 }
